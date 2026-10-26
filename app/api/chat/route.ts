@@ -4,6 +4,9 @@ import { runAgent, type Turn } from '@/lib/agent';
 import { geminiClient } from '@/lib/gemini';
 import { LISTINGS } from '@/lib/listings';
 
+// Allow time for retries when the model API is busy (Vercel's default can be shorter).
+export const maxDuration = 60;
+
 const Body = z.object({
   message: z.string().trim().min(1).max(500),
   history: z.array(z.object({ role: z.enum(['user', 'model']), text: z.string().max(4000) })).max(10).optional(),

@@ -6,3 +6,5 @@ node_modules/
 eval/results-*.json
 *.tsbuildinfo
 next-env.d.ts
+
+.vercel

@@ -1,5 +1,7 @@
 # HomeScout: an AI agent for property search
 
+**Live demo: [homescout-seven.vercel.app](https://homescout-seven.vercel.app)** (try a [ready-made question](https://homescout-seven.vercel.app/?q=Studio%20in%20JLT%20for%205%2C000%20a%20month))
+
 [![CI](https://github.com/Stuart-Vision/homescout/actions/workflows/ci.yml/badge.svg)](https://github.com/Stuart-Vision/homescout/actions/workflows/ci.yml)
 
 Ask for a home in plain English, for example *"2-bed in Dubai Marina under AED 150k a year, furnished"*. An LLM agent (Google **Gemini** with **function calling**) turns the request into tool calls:
@@ -10,6 +12,8 @@ Ask for a home in plain English, for example *"2-bed in Dubai Marina under AED 1
 It then answers using only what the tools returned. The UI shows the listings and **every tool call the agent made**.
 
 **Next.js 16 · React 19 · TypeScript · Gemini API (function calling) · Zod · Node test runner · GitHub Actions**
+
+![HomeScout answering a search](docs/screenshot.png)
 
 > The listings are **synthetic sample data** (400 homes across 10 Dubai communities, generated from a fixed seed) for a portfolio project. Prices are illustrative. Not affiliated with any property portal.
 

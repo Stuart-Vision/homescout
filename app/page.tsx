@@ -14,6 +14,9 @@ const EXAMPLES = [
   'Studio near the metro for 5,000 a month',
 ];
 
+/** Light clean-up of the model's markdown: '* item' becomes a bullet, **bold** markers are dropped. */
+const tidy = (text: string) => text.replace(/^\s*[*-]\s+/gm, '• ').replace(/\*\*(.+?)\*\*/g, '$1');
+
 const aed = (n: number) => `AED ${n.toLocaleString('en-US')}`;
 
 export default function Home() {
@@ -70,7 +73,7 @@ export default function Home() {
       <section className="chat" aria-live="polite">
         {messages.map((m, i) => (
           <div key={i} className={`msg ${m.role} ${m.error ? 'error' : ''}`}>
-            <div className="bubble">{m.text}</div>
+            <div className="bubble">{m.role === 'model' ? tidy(m.text) : m.text}</div>
             {m.reply && m.reply.listings.length > 0 && (
               <div className="cards">
                 {m.reply.listings.map((l) => (
