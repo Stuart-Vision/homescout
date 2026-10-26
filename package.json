@@ -1,0 +1,28 @@
+{
+  "name": "homescout",
+  "version": "1.0.0",
+  "private": true,
+  "description": "AI property search assistant: an LLM agent (Gemini function calling) over a Dubai listings dataset, with a Next.js UI and an evaluation suite.",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "typecheck": "tsc --noEmit",
+    "test": "node --import tsx --test test/*.test.ts",
+    "eval": "tsx scripts/eval.ts"
+  },
+  "dependencies": {
+    "@google/genai": "^2.31.0",
+    "next": "^16.4.3",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1",
+    "zod": "^4.6.7"
+  },
+  "devDependencies": {
+    "@types/node": "^22.20.5",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "tsx": "^4.23.15",
+    "typescript": "^5.8.3"
+  }
+}
